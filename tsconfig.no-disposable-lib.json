@@ -1,0 +1,17 @@
+// Deliberately broken: the same source, the same target, but no
+// ESNext.Disposable in `lib` and no @types/node to smuggle it in.
+// check.mjs runs this and expects it to FAIL with TS2318 / TS2550 / TS2304.
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "types": [],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/lib-probe.ts"]
+}

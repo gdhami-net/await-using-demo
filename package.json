@@ -1,0 +1,17 @@
+{
+  "name": "await-using-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node check.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "node --test src/equivalence.test.ts src/order.test.ts src/on-throw.test.ts src/suppressed.test.ts src/stack.test.ts",
+    "test:compiled": "npm run build && node --test dist/equivalence.test.js dist/order.test.js dist/on-throw.test.js dist/suppressed.test.js dist/stack.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "typescript": "~5.9.3"
+  }
+}
